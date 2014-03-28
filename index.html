@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<!--   Full Screen Mobile App -->
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="white">
@@ -9,94 +10,42 @@
 	<link rel="icon" href="http://www.plone.uni-bonn.de/kontakt/plone-icon.png/image" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.plone.uni-bonn.de/kontakt/plone-icon.png/image" />
 	
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 80%; width: 100%}
-    </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo-W0EQoZln8TSc7_v4I3LD_n6mBGFUzI&sensor=false">
-    </script>
-    <script type="text/javascript">
- 	//
-//var zoom_val=17;
-var myLatLng = new google.maps.LatLng(59.346630, 18.072056);
-      function initialize() {
-  	var mapOptions = {
-          center: new google.maps.LatLng(59.346630, 18.072056),
-          zoom: 17,
-		  panControl: false,
-		  zoomControl: false,
-		  mapTypeId:"hybrid",
-        };
+	<!-- CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	
+	<!-- 	JQuery -->
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    
+	<!--     Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo-W0EQoZln8TSc7_v4I3LD_n6mBGFUzI&sensor=false"></script>
+    
+	<!--     Main script functions -->
+    <script src="main.js"></script>
 
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-		
-		var marker1 = new google.maps.Marker({
-		 	position: map.getCenter(),
-		 	map: map,
-			draggable: true,
-			animation: google.maps.Animation.BOUNCE,
-		});
-		
-		var marker2 = new google.maps.Marker({
-			position: new google.maps.LatLng(59.347630, 18.072056),
-			map: map,
-			draggable: false,
-		});
-		
-		
-		this.zoom_in = function() {
-		  	map.setZoom(parseInt(map.getZoom())+1);
-		  };
-		this.zoom_out = function() {
-			map.setZoom(parseInt(map.getZoom())-1);
-		  };
-		this.pan_left = function() {
-			map.panBy(-200.0, 0);
-		  };
-		this.pan_right = function() {
-			map.panBy(200.0, 0);
-		  };
-		
-		this.pan_up = function() {
-			map.panBy(0, -200.0);
-		  };
-		
-		this.pan_down = function() {
-			map.panBy(0, 200.0);
-		  };
-		
-		
-      }
-
-
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	</head>
+  	
+  </head>
+  
   <body>
 	<div id="map-canvas"></div>
 	<div class="row">
 		<div class="col-md-1">
-			<button onclick="zoom_in()">Zoom in!</button>
+			<button class="btn btn-default" onclick="zoom_in()">Zoom in!</button>
 		</div>
 		<div class="col-md-1">
-			<button onclick="zoom_out()">Zoom out!</button>
+			<button class="btn btn-default" onclick="zoom_out()">Zoom out!</button>
 		</div>
 		<div class="col-md-1">
-			<button onclick="pan_left()">Go Left!</button>
+			<button class="btn btn-default" onclick="pan_left()">Go Left!</button>
 			</div>
 			<div class="col-md-1">
-			<button onclick="pan_right()">Go Right!</button>
+			<button class="btn btn-default" onclick="pan_right()">Go Right!</button>
 			</div>
 			<div class="col-md-1">
-			<button onclick="pan_up()">Go Up!</button>
+			<button class="btn btn-default" onclick="pan_up()">Go Up!</button>
 			</div>
 			<div class="col-md-1">
-			<button onclick="pan_down()">Go Down!</button>
+			<button class="btn btn-default" onclick="pan_down()">Go Down!</button>
 		</div>
 	</div>	
 				
